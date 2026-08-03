@@ -1231,3 +1231,10 @@ drop-shadow(0 0 15px hotpink);
 
 
 }
+.star,
+.petal,
+.shooting-star {
+
+will-change: transform;
+
+}

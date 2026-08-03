@@ -29,8 +29,13 @@ if (!loaded) {
   return (
     <div className="page">
       <div className="moon"></div>
-      <Nebula />
-      {showConfetti && <Confetti recycle={true} />}
+ 
+      {showConfetti && (
+  <Confetti
+    recycle={false}
+    numberOfPieces={150}
+  />
+)}
 
       <Stars />
       <ShootingStars />
@@ -144,9 +149,9 @@ function LoveQuestion({ next }) {
     setIndex(Math.floor(Math.random() * texts.length));
 
     setPos({
-      x: Math.random() * 500 - 250,
-      y: Math.random() * 350 - 170,
-      rotate: Math.random() * 720,
+      x: Math.random() * 250 - 125,
+      y: Math.random() * 200 - 100,
+      rotate: Math.random() * 360,
       scale: 0.8 + Math.random() * 0.8,
     });
   };
@@ -206,9 +211,9 @@ function LoveQuestion2({ next }) {
     setIndex(Math.floor(Math.random() * texts.length));
 
     setPos({
-      x: Math.random() * 500 - 250,
-      y: Math.random() * 350 - 170,
-      rotate: Math.random() * 720,
+      x: Math.random() * 250 - 125,
+      y: Math.random() * 200 - 100,
+      rotate: Math.random() * 360,
       scale: 0.8 + Math.random() * 0.8,
     });
   };
@@ -238,7 +243,7 @@ function LoveQuestion2({ next }) {
         </motion.button>
       </div>
     </motion.div>
-    
+
   );
 }
 

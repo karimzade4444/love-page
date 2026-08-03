@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function Petals() {
   const petals = [];
 
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 10; i++) {
     petals.push(
       <motion.div
         key={i}

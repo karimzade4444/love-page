@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function Hearts() {
   const hearts = [];
 
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 10; i++) {
     hearts.push(
       <motion.div
         key={i}
