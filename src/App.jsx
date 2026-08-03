@@ -238,6 +238,7 @@ function LoveQuestion2({ next }) {
         </motion.button>
       </div>
     </motion.div>
+    
   );
 }
 
