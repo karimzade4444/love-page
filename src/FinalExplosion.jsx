@@ -34,14 +34,13 @@ export default function FinalExplosion() {
         animate={
           heartBoom
             ? {
-                scale: [1, 1.2, 1.8, 0],
-
-                opacity: [1, 1, 1, 0],
+                scale: [1, 1.15, 1.5],
+                opacity: [1, 1, 0],
               }
             : {}
         }
         transition={{
-          duration: 2,
+          duration: 1.2,
         }}
       >
         ❤️
