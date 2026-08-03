@@ -29,18 +29,16 @@ if (!loaded) {
   return (
     <div className="page">
       <div className="moon"></div>
- 
-      {showConfetti && (
-  <Confetti
-    recycle={false}
-    numberOfPieces={150}
-  />
-)}
 
-      <Stars />
-      <ShootingStars />
-      <Hearts />
-      <Petals />
+      {showConfetti && <Confetti recycle={false} numberOfPieces={150} />}
+
+      {step < 5 && <Nebula />}
+
+      {step < 5 && <Stars />}
+
+      {step < 5 && <Hearts />}
+
+      {step < 5 && <Petals />}
 
       <AnimatePresence mode="wait">
         {step === 0 && (

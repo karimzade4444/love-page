@@ -34,7 +34,7 @@ export default function FinalExplosion() {
         animate={
           heartBoom
             ? {
-                scale: [1, 1.3, 2.5, 0],
+                scale: [1, 1.2, 1.8, 0],
 
                 opacity: [1, 1, 1, 0],
               }
