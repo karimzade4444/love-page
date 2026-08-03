@@ -1,57 +1,70 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import TypeWritter from "./TypeWritter";
-import Confetti from "react-confetti";
 import HeartExplosion from "./HeartExplosion";
 
 export default function FinalExplosion() {
-  const [explode, setExplode] = useState(false);
-  const [heartBoom, setHeartBoom] = useState(false);
+  const [showHeart, setShowHeart] = useState(true);
+  const [showExplosion, setShowExplosion] = useState(false);
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setHeartBoom(true);
+    const heartTimer = setTimeout(() => {
+      setShowHeart(false);
+      setShowExplosion(true);
     }, 2500);
 
-    setTimeout(() => {
-      setExplode(true);
-    }, 3500);
+    const textTimer = setTimeout(() => {
+      setShowText(true);
+    }, 4000);
+
+    return () => {
+      clearTimeout(heartTimer);
+      clearTimeout(textTimer);
+    };
   }, []);
 
   return (
     <div className="finalScene">
-      {explode && <Confetti recycle={true} numberOfPieces={100} />}
+      {showHeart && (
+        <motion.div
+          className="hugeHeart"
+          initial={{
+            scale: 0,
+            opacity: 0,
+          }}
+          animate={{
+            scale: [0, 1.3, 1],
+            opacity: 1,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
+          ❤️
+        </motion.div>
+      )}
 
-      <motion.div
-        className="flash"
-        initial={{ opacity: 1 }}
-        animate={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-      />
+      {showExplosion && <HeartExplosion />}
 
-      <motion.div
-        className="hugeHeart"
-        animate={
-          heartBoom
-            ? {
-                scale: [1, 1.15, 1.5],
-                opacity: [1, 1, 0],
-              }
-            : {}
-        }
-        transition={{
-          duration: 1.2,
-        }}
-      >
-        ❤️
-      </motion.div>
-      {heartBoom && <HeartExplosion />}
-
-      {explode && (
-        <div className="loveBox">
+      {showText && (
+        <motion.div
+          className="loveBox"
+          initial={{
+            opacity: 0,
+            y: 50,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 1,
+          }}
+        >
           <TypeWritter
-            speed={35}
-            text=" Ма мехом тда гапой важнима бугум Чон... ❤️"
+            speed={40}
+            text="Ма мехом тда гапой важнима бугум Чон... ❤️"
           />
 
           <p>Рахмат барой ки хар руз хасти.</p>
@@ -63,17 +76,21 @@ export default function FinalExplosion() {
           <p>Рахмат Занакчон ки да хаёти ма пайдо шиди.</p>
 
           <motion.h1
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{
+              scale: 0,
+              opacity: 0,
+            }}
+            animate={{
+              scale: 1,
+              opacity: 1,
+            }}
             transition={{
-              delay: 8,
-
-              duration: 1,
+              delay: 3,
             }}
           >
             ❤️ Ма тра ганда сахт дуст Медор Хаёти ма ❤️
           </motion.h1>
-        </div>
+        </motion.div>
       )}
     </div>
   );

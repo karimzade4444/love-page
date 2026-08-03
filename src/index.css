@@ -1095,12 +1095,11 @@ transform:translateY(0);
 
 }
 .explode-heart{
-
-
-font-size:35px;
-
-filter:none;
-
+    position:absolute;
+    font-size:28px;
+    pointer-events:none;
+    z-index:20;
+    will-change:transform,opacity;
 }
 /* 📱 Мобильная адаптация */
 

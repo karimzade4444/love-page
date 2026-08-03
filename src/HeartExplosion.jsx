@@ -3,18 +3,13 @@ import { useMemo } from "react";
 
 export default function HeartExplosion() {
   const hearts = useMemo(() => {
-    return Array.from({ length: 25 }).map(() => {
+    return Array.from({ length: 15 }, () => {
       const angle = Math.random() * Math.PI * 2;
-      const distance = 150 + Math.random() * 250;
+      const distance = 180 + Math.random() * 180;
 
       return {
         x: Math.cos(angle) * distance,
-
         y: Math.sin(angle) * distance,
-
-        scale: Math.random() * 0.8 + 0.5,
-
-        duration: 1.5 + Math.random() * 0.5,
       };
     });
   }, []);
@@ -28,21 +23,17 @@ export default function HeartExplosion() {
           initial={{
             x: 0,
             y: 0,
-            scale: 0,
             opacity: 1,
+            scale: 0.7,
           }}
           animate={{
             x: heart.x,
-
             y: heart.y,
-
-            scale: heart.scale,
-
             opacity: 0,
+            scale: 1,
           }}
           transition={{
-            duration: heart.duration,
-
+            duration: 1.2,
             ease: "easeOut",
           }}
         >
