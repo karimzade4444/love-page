@@ -1,0 +1,1233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    background:
+    radial-gradient(circle at top,#ff5fa2 0%,#7b2cbf 40%,#0f172a 100%);
+}
+
+.page{
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* Карточка */
+
+.card{
+
+    width:90%;
+    max-width:520px;
+
+    padding:45px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:
+    0 0 60px rgba(255,105,180,.35),
+    0 0 120px rgba(255,255,255,.08);
+
+    text-align:center;
+
+    color:white;
+
+    position:relative;
+
+    z-index:20;
+}
+
+.card h1{
+
+    font-size:42px;
+    margin-bottom:10px;
+    font-weight:800;
+
+}
+
+.card h2{
+
+    margin-bottom:25px;
+
+    color:#ffd5eb;
+
+}
+
+.card p{
+
+    margin-top:20px;
+
+    font-size:18px;
+
+    line-height:1.7;
+
+}
+
+/* Сердце */
+
+.heart{
+
+    font-size:75px;
+
+    color:#ff3d8d;
+
+    margin-bottom:25px;
+
+    animation:pulse 1.4s infinite;
+
+    filter:drop-shadow(0 0 18px hotpink);
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.2);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+/* Кнопки */
+
+.buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:25px;
+
+margin-top:40px;
+
+flex-wrap:wrap;
+
+}
+
+button{
+
+padding:15px 38px;
+
+border:none;
+
+border-radius:999px;
+
+cursor:pointer;
+
+font-size:18px;
+
+font-weight:700;
+
+background:linear-gradient(45deg,#ff3d8d,#ff86b8);
+
+color:white;
+
+transition:.35s;
+
+box-shadow:0 10px 25px rgba(255,20,147,.45);
+
+}
+
+button:hover{
+
+transform:translateY(-5px) scale(1.08);
+
+box-shadow:0 20px 40px rgba(255,20,147,.55);
+
+}
+
+/* Звёзды */
+
+.star{
+
+position:absolute;
+
+width:3px;
+
+height:3px;
+
+border-radius:50%;
+
+background:white;
+
+animation:blink 3s infinite;
+
+box-shadow:
+
+0 0 8px white,
+
+0 0 18px white;
+
+}
+
+@keyframes blink{
+
+0%{
+
+opacity:.2;
+
+transform:scale(.5);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.8);
+
+}
+
+100%{
+
+opacity:.2;
+
+transform:scale(.5);
+
+}
+
+}
+
+/* Светящиеся круги */
+
+.page::before{
+
+content:"";
+
+position:absolute;
+
+width:450px;
+
+height:450px;
+
+background:#ff4fa1;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+left:-100px;
+
+top:-100px;
+
+opacity:.4;
+
+animation:float1 8s infinite ease-in-out;
+
+}
+
+.page::after{
+
+content:"";
+
+position:absolute;
+
+width:500px;
+
+height:500px;
+
+background:#8b5cf6;
+
+border-radius:50%;
+
+filter:blur(190px);
+
+right:-150px;
+
+bottom:-150px;
+
+opacity:.45;
+
+animation:float2 10s infinite ease-in-out;
+
+}
+
+@keyframes float1{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(40px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes float2{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-40px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Заголовки */
+
+h1{
+
+text-shadow:
+
+0 0 20px hotpink,
+
+0 0 40px hotpink;
+
+}
+
+/* Телефон */
+
+@media(max-width:700px){
+
+.card{
+
+padding:35px 25px;
+
+}
+
+.card h1{
+
+font-size:32px;
+
+}
+
+.card h2{
+
+font-size:23px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
+/* Летающие сердечки */
+
+.floating-heart{
+
+position:absolute;
+
+font-size:28px;
+
+pointer-events:none;
+
+filter:drop-shadow(0 0 12px hotpink);
+
+z-index:2;
+
+user-select:none;
+
+animation:heartGlow 2s infinite;
+}
+
+@keyframes heartGlow{
+
+0%{
+
+transform:scale(1);
+
+filter:drop-shadow(0 0 8px hotpink);
+
+}
+
+50%{
+
+transform:scale(1.25);
+
+filter:drop-shadow(0 0 20px deeppink);
+
+}
+
+100%{
+
+transform:scale(1);
+
+filter:drop-shadow(0 0 8px hotpink);
+
+}
+
+}
+.typing{
+
+font-size:38px;
+
+font-weight:800;
+
+line-height:1.4;
+
+min-height:120px;
+
+color:white;
+
+text-shadow:
+
+0 0 20px hotpink,
+
+0 0 40px hotpink;
+
+}
+
+.cursor{
+
+display:inline-block;
+
+animation:blinkCursor .8s infinite;
+
+color:#ff69b4;
+
+font-weight:300;
+
+}
+
+@keyframes blinkCursor{
+
+0%{
+
+opacity:1;
+
+}
+
+50%{
+
+opacity:0;
+
+}
+
+100%{
+
+opacity:1;
+
+}
+
+}
+
+.loveText{
+
+margin-top:25px;
+
+font-size:19px;
+
+line-height:1.8;
+
+color:#ffe3f2;
+
+animation:fadeText 2s;
+
+}
+
+@keyframes fadeText{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+button{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+button::before{
+
+content:"";
+
+position:absolute;
+
+width:200%;
+
+height:100%;
+
+background:linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.4),
+
+transparent
+
+);
+
+left:-200%;
+
+top:0;
+
+transition:.7s;
+
+}
+
+button:hover::before{
+
+left:120%;
+
+}
+
+button:active{
+
+transform:scale(.95);
+
+}
+/* Падающие звезды */
+
+.shooting-star{
+
+position:absolute;
+
+width:180px;
+
+height:2px;
+
+background:linear-gradient(
+90deg,
+white,
+rgba(255,255,255,.1)
+);
+
+border-radius:999px;
+
+transform:rotate(-35deg);
+
+filter:
+
+drop-shadow(0 0 8px white)
+
+drop-shadow(0 0 18px white);
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+/* Луна */
+
+.moon{
+
+position:absolute;
+
+top:60px;
+
+right:80px;
+
+width:130px;
+
+height:130px;
+
+border-radius:50%;
+
+background:
+
+radial-gradient(circle,#fff,#f8f1d5);
+
+box-shadow:
+
+0 0 60px white,
+
+0 0 120px #fff9c4,
+
+0 0 220px rgba(255,255,255,.5);
+
+animation:moonFloat 6s ease-in-out infinite;
+
+opacity:.95;
+
+}
+
+@keyframes moonFloat{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(15px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.bigHeart{
+
+font-size:90px;
+
+margin-bottom:20px;
+
+animation:heartBeat 1.2s infinite;
+
+filter:
+
+drop-shadow(0 0 18px hotpink);
+
+}
+
+@keyframes heartBeat{
+
+0%{
+
+transform:scale(1);
+
+}
+
+25%{
+
+transform:scale(1.2);
+
+}
+
+40%{
+
+transform:scale(.95);
+
+}
+
+60%{
+
+transform:scale(1.25);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+.loveMessage{
+
+margin-top:18px;
+
+font-size:19px;
+
+line-height:1.8;
+
+color:#ffe7f3;
+
+animation:fadeInUp .8s;
+
+}
+
+.continueBtn{
+
+margin-top:35px;
+
+}
+
+@keyframes fadeInUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+.story-screen{
+
+position:absolute;
+inset:0;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:rgba(0,0,0,.35);
+
+backdrop-filter:blur(4px);
+
+z-index:100;
+
+}
+
+.story-text{
+
+font-size:48px;
+font-weight:800;
+text-align:center;
+
+color:white;
+
+padding:30px;
+
+text-shadow:
+
+0 0 20px #ff4fa1,
+0 0 40px #ff4fa1,
+0 0 80px #ff4fa1;
+
+animation:storyGlow 2s infinite alternate;
+
+}
+
+@keyframes storyGlow{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.04);
+
+}
+
+}
+
+@media(max-width:700px){
+
+.story-text{
+
+font-size:30px;
+
+padding:25px;
+
+}
+
+}
+.finalCard{
+
+overflow:hidden;
+
+}
+
+.finalHeart{
+
+font-size:120px;
+
+margin-bottom:20px;
+
+filter:
+
+drop-shadow(0 0 30px hotpink);
+
+}
+
+.finalCard h1{
+
+font-size:46px;
+
+margin-bottom:20px;
+
+}
+
+.finalCard h2{
+
+margin-top:35px;
+
+font-size:34px;
+
+color:#ffd3ea;
+
+text-shadow:
+
+0 0 20px hotpink;
+
+animation:loveGlow 2s infinite alternate;
+
+}
+
+@keyframes loveGlow{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.05);
+
+}
+
+}
+.petal{
+
+position:absolute;
+
+font-size:28px;
+
+pointer-events:none;
+
+z-index:3;
+
+filter:
+
+drop-shadow(0 0 8px pink);
+
+}
+.nebula{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(60px);
+will-change:transform;
+opacity:.35;
+
+animation:nebulaMove 10s infinite ease-in-out;
+
+}
+
+.nebula1{
+
+width:320px;
+
+height:320px;
+
+background:#ff4fa1;
+
+left:-80px;
+
+bottom:0;
+
+}
+
+.nebula2{
+
+width:280px;
+
+height:280px;
+
+background:#8b5cf6;
+
+right:-60px;
+
+top:120px;
+
+}
+
+.nebula3{
+
+width:220px;
+
+height:220px;
+
+background:#38bdf8;
+
+left:40%;
+
+top:35%;
+
+}
+
+@keyframes nebulaMove{
+
+0%{
+
+transform:translate(0,0) scale(1);
+
+}
+
+50%{
+
+transform:translate(30px,-20px) scale(1.15);
+
+}
+
+100%{
+
+transform:translate(0,0) scale(1);
+
+}
+
+}
+.loading{
+
+width:100vw;
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+background:#050510;
+
+color:white;
+
+}
+
+.loadingHeart{
+
+font-size:90px;
+
+margin-bottom:30px;
+
+filter:
+
+drop-shadow(0 0 20px hotpink);
+
+}
+
+.progress{
+
+width:320px;
+
+height:18px;
+
+background:#222;
+
+border-radius:999px;
+
+overflow:hidden;
+
+margin-top:25px;
+
+}
+
+.progressFill{
+
+height:100%;
+
+width:0;
+
+background:linear-gradient(
+
+90deg,
+
+hotpink,
+
+deeppink
+
+);
+
+border-radius:999px;
+
+}
+.finalScene{
+
+position:absolute;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+overflow:hidden;
+
+z-index:999;
+
+}
+
+.flash{
+
+position:absolute;
+
+inset:0;
+
+background:white;
+
+pointer-events:none;
+
+}
+
+.hugeHeart{
+
+font-size:230px;
+
+filter:
+
+drop-shadow(0 0 50px hotpink)
+
+drop-shadow(0 0 120px deeppink);
+
+animation:beat 1.2s infinite;
+
+z-index:5;
+
+}
+
+@keyframes beat{
+
+0%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+100%{
+
+transform:scale(1);
+
+}
+
+}
+
+.loveBox{
+
+margin-top:40px;
+
+text-align:center;
+
+color:white;
+
+max-width:700px;
+
+padding:30px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(25px);
+
+border-radius:30px;
+
+animation:fadeIn 2s;
+
+}
+
+.loveBox p{
+
+margin-top:15px;
+
+font-size:22px;
+
+color:#ffe6f5;
+
+}
+
+.loveBox h1{
+
+margin-top:45px;
+
+font-size:60px;
+
+color:#fff;
+
+text-shadow:
+
+0 0 30px hotpink,
+
+0 0 80px deeppink;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+.explode-heart{
+
+position:absolute;
+
+font-size:35px;
+
+z-index:20;
+
+pointer-events:none;
+
+filter:
+
+drop-shadow(0 0 15px hotpink);
+
+}
+/* 📱 Мобильная адаптация */
+
+@media (max-width: 600px) {
+
+  .card {
+
+    width: 90%;
+
+    padding: 25px 18px;
+
+    border-radius: 25px;
+
+  }
+
+
+  .typing {
+
+    font-size: 28px;
+
+  }
+
+
+  .loveText {
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+  }
+
+
+  .moon {
+
+    width: 80px;
+
+    height: 80px;
+
+    right: 25px;
+
+    top: 30px;
+
+  }
+
+
+  .hugeHeart {
+
+    font-size: 130px;
+
+  }
+
+
+  .loveBox {
+
+    width: 90%;
+
+    padding: 20px;
+
+  }
+
+
+  .loveBox h1 {
+
+    font-size: 35px;
+
+  }
+
+
+  .loveBox p {
+
+    font-size: 17px;
+
+  }
+
+
+  button {
+
+    font-size: 16px;
+
+    padding: 12px 22px;
+
+  }
+
+
+}
