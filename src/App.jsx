@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import Confetti from "react-confetti";
 import Hearts from "./Hearts";
 import TypeWritter from "./TypeWritter";
-import ShootingStars from "./ShootingStars";
+
 import LoveLetter from "./LoveLetter";
 import Petals from "./Petals";
 import Nebula from "./Nebula";

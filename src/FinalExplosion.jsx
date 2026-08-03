@@ -20,7 +20,7 @@ export default function FinalExplosion() {
 
   return (
     <div className="finalScene">
-      {explode && <Confetti recycle={true} numberOfPieces={900} />}
+      {explode && <Confetti recycle={true} numberOfPieces={100} />}
 
       <motion.div
         className="flash"

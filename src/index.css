@@ -540,37 +540,6 @@ button:active{
 transform:scale(.95);
 
 }
-/* Падающие звезды */
-
-.shooting-star{
-
-position:absolute;
-
-width:180px;
-
-height:2px;
-
-background:linear-gradient(
-90deg,
-white,
-rgba(255,255,255,.1)
-);
-
-border-radius:999px;
-
-transform:rotate(-35deg);
-
-filter:
-
-drop-shadow(0 0 8px white)
-
-drop-shadow(0 0 18px white);
-
-pointer-events:none;
-
-z-index:1;
-
-}
 
 /* Луна */
 
@@ -1233,7 +1202,7 @@ drop-shadow(0 0 15px hotpink);
 }
 .star,
 .petal,
-.shooting-star {
+ {
 
 will-change: transform;
 
