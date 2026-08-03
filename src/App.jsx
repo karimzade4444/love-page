@@ -222,7 +222,7 @@ function LoveQuestion2({ next }) {
       animate={{ opacity: 1 }}
       className="card"
     >
-      <h1>Чон бугу мара Занакчон? 🌙✨</h1>
+      <h1>Чон мегуй мара? 🥺🌙✨</h1>
 
       <div className="buttons">
         <button onClick={next}>Чон ❤️</button>
